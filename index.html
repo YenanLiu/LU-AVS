@@ -1,18 +1,712 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcom LU-AVS</title>
-</head>
-<body>
-    <h1>>Welcom LU-AVS</h1>
-    <p>>Welcom LU-AVS。</p>
-    <ul>
-        <li>P 1</li>
-        <li>P 2</li>
-        <li>P 3</li>
-    </ul>
-    <p>More Contet</p>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LU-AVS</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Kaushan+Script|Droid+Serif:400,700,400italic,700italic|Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+	<link rel="icon" href="./images/icon_logo.png" type="image/x-icon">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/agency.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41410283-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-41410283-2');
+    </script>
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav", style = "background-color: #373435">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:8em;" src="./images/LU-AVS-logo-white.png" alt="Logo"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#stats">Dataset</a>
+            </li>
+			<li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#baselines">Baselines</a>
+            </li>
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+			</li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <h2 class="section-heading text-uppercase" style="text-align:center;">Benchmarking Audio Visual Segmentation for Long-Untrimmed Videos</h2>
+                <h3 class="section-heading text-uppercase" style="text-align:center; color:#20c997">[Submitted to CVPR 2024]<h3>
+    
+                <p class="text-muted" style="text-align:center; color:#00F">
+                  <h5> 
+                  <a href="#" style="color:#ffc107">[Paper ID: 17299]</a>
+                 </h5>
+                 </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </header>
+
+<!-- About -->
+<section class="bg-light" id="about">
+  <div class="container">
+
+    <br/>
+
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading text-uppercase">Why Long-Untrimmed Audio-visual Segmentation Dataset?</h3>
+         <p  class="text-muted">
+		<b>Existing audio-visual segmentation (AVS) datasets typically focus on short-trimmed videos with only one pixel-map annotation for a per-second video clip.</b> 
+		In contrast, for untrimmed videos, the sound duration, start- and end-sounding time positions, and visual deformation of audible objects vary significantly. 
+		Therefore, <b> we observed that current AVS models trained on trimmed videos might struggle to segment sounding objects in long videos. </b>
+		<b> To investigate the feasibility of grounding audible objects in videos along both temporal and spatial dimensions,</b> 
+		we introduce the <b>L</b>ong-<b>U</b>ntrimmed <b>A</b>udio-<b>V</b>isual <b>S</b>egmentation dataset <b>(LU-AVS)</b>, 
+		which includes precise frame-level annotations of sounding emission times and provides exhaustive mask annotations for all frames.
+          </p><center><img src="./images/teasev2.png" alt="" style="width:99%;  margin-top:8px; margin-bottom:15px;"></center>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <ul> -->
+          <p class="text-muted">
+			Samples of our from <b>L</b>ong-<b>U</b>ntrimmed <b>A</b>udio-<b>V</b>isual <b>S</b>egmentation dataset.  
+			Different from previous AVS datasets, <b>LU-AVS is specifically crafted to explore the challenges inherent in the AVS task for long-untrimmed videos. </b>
+			<b><span style="color:#ff6600">It features detailed start- and end-sounding positions in the temporal dimension, 
+			along with comprehensive mask and bounding box annotations in the spatial dimension.</span></b>
+			The examples show that our dataset contains numerous audible segments in each video, 
+			characterized by diverse durations and varying start and end-sounding positions. 
+			Additionally, <b>within a single video, the same objects may have notable shifts spatially and undergo deformation.</b>
+          </p>
+      </div>
+    </div>
+
+    <br/>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading text-uppercase">What is the audio-visual segmentation task?</h3>
+
+            <p class="text-muted">
+              <b>Task Definition.</b> Audio-visual segmentation aims to localize audible objects by a pixel-level map for a given audio-visual pair.
+            </p>
+            <p class="text-muted">
+              <b>Challenges in Long-Untrimmed Videos.</b> (1) The start and sounding frames of audible object are uncertain. </br>
+			  (2) The sounding duration of the target objects varies significantly among different videos.
+            </p>
+        </h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading text-uppercase">What is LU-AVS dataset?</h3>
+        <!-- <h5 class="text-muted" style="text-align:left;"> -->
+          <!-- <ul> -->
+            <p class="text-muted">
+			  To investigate the AVS task on long-untrimmed videos, we propose a large-scale Long-Untrimmed Audio-Visual Segmentation (LU-AVS) dataset. 
+              LU-AVS dataset comprises 6.1K untrimmed videos covering 78 categories, and 62K pixel-level annotation masks are provided to indicate the audible objects.
+              Moreover,  we extend our dataset with bounding box annotations, extending them to both previously mask-marked categories and those challenging to annotate with masks. 
+			  The extended LU-AVS dataset contains about 7.2K untrimmed videos and more than 88 categories.
+			  More details the LU-AVS dataset are shown below.
+            </p>
+
+
+          <!-- </ul> -->
+        </h5>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <!-- news column -->
+      <div class="col-md-4">
+        <h4 class="service-heading">Basic informations</h4>
+        <ul class="text-muted">
+          <li class="text-muted">Videos are collected from YouTube.</li>
+          <li class="text-muted"><b>7.2K videos</b> spanning <b>88 categories</b>.</li>
+          <li class="text-muted"><b>6.2K annotated masks</b> and <b>7.3K bounding boxes</b></li>
+          <li class="text-muted">Spanning a <b>wide range of domains</b>, including Animal, Human, Music, Sport, Tool, Vehicle, and others</li>
+        </ul>
+      </div>
+      <!-- characteristics column -->
+      <div class="col-md-4">
+        <h4 class="service-heading">Characteristics</h4>
+        <ul class="text-muted">
+          <li class="text-muted">Total duration of videos is <b>84.9 hours </b>, sounding duration is 74.6 hours.</li>
+          <li class="text-muted">Long average duration <b>42.23s</b>.</li>
+          <li class="text-muted">Long average sounding duration <b>13.69s</b>.</li>
+          <li class="text-muted">Over half of videos have multiple audible segments.</li>
+          <li class="text-muted">Target objects have notable shifts and undergo deformation.</li>
+        </ul>
+      </div>
+
+      <!-- udated column -->
+      <div class="col-md-4">
+        <h4 class="service-heading">Personal data/Human subjects</h4>
+          <p class="text-muted">Videos in LU-AVS are public on YouTube, and annotated via professional annotators. 
+		  The details about the annotation way is explained in our paper. 
+		  Our dataset does not contain personally identifiable information or offensive content.</p>
+      </div>
+      </div>
+
+    <!-- video banner row -->
+        <div class="row justify-content-md-center text-center">
+      <div class="col-md-12" style="text-align:left">
+        <h4 class="section-subheading" style="text-align:left; margin-left:-14px">Video examples</h4>
+      </div>
+      <hr/>
+      <p class="text-muted" style="text-align:left">
+        Some annotated examples in the LU-AVS dataset. Each color represents an auible segment type.
+      </p>
+      <p class="text-muted" style="text-align:left; margin-right: 10px;">
+ 
+        <table>
+          <tr>
+            <td style="width:3%"></td>
+            <td style="width:30%">
+              <iframe width="368" height="207" src="./videos/-3f9zdKh7Oc.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </td>
+
+            <td style="width:1%"></td>
+            <td style="width: 30%">
+              <iframe width="368" height="207" src="./videos/2LTe9T2zwEM.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </td>
+
+            <td style="width:1%"></td>
+            <td style="width: 30%">
+              <iframe width="368" height="207" src="./videos/0EUIJsiKAx0.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width:1%"></td>
+            <td style="width: 30%">
+              <div style="height: 200px; text-align:left; border: solid 0.5px #DBDCDB; overflow-x:auto ;overflow-y: auto;">
+                <font color="#148F77">
+                  <b> The information of the audible segments:</b><br>
+				  (1) Female singing:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 68; end frame 482<br>
+                  (2) Female singing:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 651; end frame 783<br>
+                  (3) Female singing:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 938; end frame 998<br>
+			      (4) Playing acoustic guitar:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 0; end frame 631<br>
+				  (5) Playing acoustic guitar:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 769; end frame 1079<br>
+                </font>                
+              </div>                      
+            </td>
+            <td style="width:1%"></td>
+            <td style="width: 30%">
+              <div style="height: 200px; text-align:left; border: solid 0.5px #DBDCDB; overflow-x:auto ;overflow-y: auto;">
+                <font color="#148F77">
+                  <b> The information of the audible segments:</b><br>
+				  (1) Car passing:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 177; end frame 621<br>
+                  (2) Skidding:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 0; end frame 110<br>
+                </font> 
+              </div>
+            </td>
+            <td style="width:1%"></td>
+            <td style="width: 30%">
+              <div style="height: 200px; text-align:left; border: solid 0.5px #DBDCDB; overflow-x:auto ;overflow-y: auto;">
+                <font color="#148F77">
+                  <b> The information of the audible segments:</b><br>
+				  (1) Airplane flyby:</br>  &nbsp;&nbsp;&nbsp;&nbsp;  
+					start frame 0; end frame 935<br>
+                </font> 
+              </div>
+            </td>
+          </tr>
+
+       
+
+          <tr>
+            <td>
+              <div style="height: 20px;"></div>
+            </td>
+          </tr>
+
+        </table>
+
+  </br>
+  </div>
+      <div class="row">
+      <div class="col-lg-12">
+        <video autoplay muted loop width="100%">
+          <source src="./videos/video800_convert.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section id="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">LU-AVS Dataset</h2>
+        <h3 class="section-subheading text-muted">Dataset Analysis and Statistics</h3>
+      </div>
+    </div>
+	<h5 class="section-subheading text-muted"> Overview of LU-AVS Dataset:</h5>
+	    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="./images/dataset_comp.jpg" style="width: 100%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+        <b>Comparison with existing AVS datasets</b>. 
+		Statistics of publicly-available AVS datasets. Compared to the existing AVS datasets, 
+		<b>the newly curated LU-AVS possesses a greater number of mask annotations and a broader range of categories. </b>
+		Additionally, it incorporates two forms of spatial annotations. 
+		For video samples where the pixel-level annotations are hard to obtain (denoted as 'Hard'),
+		we provide the bounding box annotations. In contrast, 'Normal' samples are labeled with bounding boxes and mask annotations. 
+		<b>More importantly, the average durations of videos and their audible segments in LU-AVS are both higher than those in other AVS datasets. </b>
+		This demonstrates that LU-AVS facilitates the exploration of challenges posed by untrimmed videos in the AVS task.
+      </p>
+    </div>
+
+	</br>
+	</br>
+	
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="./images/seg_dur5.png" style="width: 100%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+	  <b>Sounding durations of each audible segment class in the LU-AVS dataset sorted by descending order, with colors indicating audible segment types. </b>
+		The category labels framed with dashed lines only include bounding box annotations, while the other categories contain mask and bounding box annotations.
+		Overall, the category distribution of the dataset spans a wide range of domains, including <b>Animal</b>, <b>Human</b>, <b>Music</b>, 
+		<b>Sport</b>, <b>Tool</b>, <b>Vehicle</b>.
+    </div>
+	
+	</br>
+	<h5 class="section-subheading text-muted">Temporal Characteristics:</h5>
+	</br>
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="./images/temporal_sta.png" style="width: 100%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+	  <b>Statistics on the temporal structure of LU-AVS. </b>
+	  (a) and (b) indicate the duration distribution of videos and audible segments, respectively. As the two figures suggested, 
+	  <b>the length of video durations and audible segment durations are various.</b>
+	  (c) presents the distribution of the start- and end-sounding positions of audible segments in the temporal dimension, 
+	  <b>revealing the start- and end-time distribution of audible segments is broad.</b>
+	  (d) shows the statistics of the number of audible segments/tubes in videos, <b> indicating that over half of the videos have multiple audible segments.</b>
+	  </p>
+	  </div>
+    </br>
+    <h5 class="section-subheading text-muted">Spatial Characteristics:</h5>
+	</br>
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="./images/spatial_sta.png" style="width: 70%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+	  <b>Statistics on the spatial distribution of sounding objects in our LU-AVS dataset. </b>
+	  (a) and (b) illustrate the size and aspect ratio distributions of annotated bounding boxes, respectively. 
+	  (c) represents the spatial distribution of the centroids of object masks.
+	  <b>This diverse object spatial distribution mitigates the data bias problem and also increases the challenges of tracking objects in videos.</b>
+	  </p>
+	  </div>
+	
+    </div>
+  </div>
+</section>
+
+
+<!-- Benchmark -->
+ <section id="baselines">
+  <div class="container">
+ 
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading text-uppercase">Strong Baselines for Benchmarking</h2>
+        <h3 class="section-subheading text-muted">Different Tasks Adopted to LU-AVS, A Strong Baseline for LU-AVS, Experimental Results and Challenge Analysis</h3>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-md-12">
+        <p class="text-muted" style="text-align:left">
+		To show the necessity and fully explore the challenges of LU-AVS, we investigate the performance of existing <b>audio-visual segmentation (AVS)</b>, 
+		<b>audio-visual localization (AVL)</b>, 
+		<b>audio-visual event localization (AVE)</b>, and <b>spatio-temporal video grounding (STVG)</b> methods on our LU-AVS dataset. 
+		Based on the analysis of the above methods, we introduce a <b>simple yet effective framework</b> to provide a base reference for long video audible object grounding in the future.
+		</p>
+        <div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
+        <img src="./images/task.png" style="width: 90%;" class="img-responsive"/> 
+        </div> 
+      </div>
+    </div>
+     <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-muted" style="text-align:left">
+        <p class="text-muted" style="text-align:left">
+          <b>More details are in the <a href="#">[Paper]</a> and <a href="#">[Supplementary]</a></b>.<br/>  
+        </p> 
+      </div>
+    </div>
+    
+
+   <div class="row">
+		<div class="col-md-12">
+			<h5 class="subheading">Task Definition:</h5>
+			<br/>
+			<h6 class="subheading">Audio-Visual Segmentation Methods (AVS):</h6>
+			<p class="text-muted" style="text-align:left">
+			<b>The goal of the AVS task is to segment audible objects in an image based on a given audio-visual pair.</b>
+			Existing methods are designed based oncdatasets with the fixed input format of 10 frames corresponding to 10s audio. 
+			To adapt these methods for untrimmed videos, we modify the input to one second of audio and five uniformly sampled frames from the segment, allowing audio-visual interactions within the per-second segment.
+		</p>
+		</div>
+		
+		<div class="col-md-12">
+			<h6 class="subheading">Audio-Visual Localization Methods (AVL):</h6>
+			<p class="text-muted" style="text-align:left">
+			<b>The AVL task also focuses on locating audible objects in the spatial dimension.</b>
+			However, AVL presents sounding regions by heatmaps.
+			For comparison, in the test stage, we convert the heatmaps into bounding boxes as other works. Thanks to our bounding-box annotations, we can evaluate AVL on our LU-AVS dataset in a unified manner.
+			Similar to the modification for AVS methods, we slice the videos into 1-second segments to fit the AVL methods.
+		</div>
+		
+		<div class="col-md-12">
+			<h6 class="subheading">Audio-Visual Event Localization Methods (AVE):</h6>
+			<p class="text-muted" style="text-align:left">
+			<b>AVE task aims at determining the audio-visual temporal segments when the target object is both audible and visible at the same time. </b>
+			This task does not focus on segmenting audible objects on the spatial dimension, they cannot be applied to segmenting objects in images.
+			These methods are also developed based on the videos with fixed durations.
+		</div>
+		
+		<div class="col-md-12">
+			<h6 class="subheading">Spatio-temporal Video Grounding Methods (STVG):</h6>
+			<p class="text-muted" style="text-align:left">
+			<b>Given a query sentence, STVG methods are required to track the target object in the video both at the spatial (bounding boxes) and temporal dimensions (start and end time positions). </b>
+			Unlike the AVS task that may require segmenting multi-sounding objects in a video, the STVG methods only need to find and track one target object for each text-video pair.
+			To explore the performance of STVG methods on LU-AVS, we modify these text-guided methods to adapt to our task.
+		</div>
+		
+		<div class="col-md-12">
+			<h6 class="subheading">A Strong LU-AVS Baseline:</h6>
+			<div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
+			<img src="./images/pipeline.png" style="width:70%;" class="img-responsive"/> 
+			</div> 
+			<p class="text-muted" style="text-align:left">
+			<b>The overview architecture of a strong baseline. </b>It first learns visual and audio features separately and then establishes visual and audio associations. 
+			It enables us to dissect the impacts of visual and audio branches explicitly.
+			</p>
+			</br>
+			<p class="text-muted" style="text-align:left">
+			Different from previous AVS datasets, the LU-AVS dataset introduces unique challenges of detecting and segmenting audible objects in long videos.
+			In untrimmed videos, the target objects may emit or stop sound at a random position in a video, and the sounding durations of objects are various 
+			in the dataset. To achieve the spatial and temporal localization of audible objects, 
+			we introduce a simple framework to provide a base reference for long video audible object grounding in the future.
+			</p>
+</div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="subheading">Benchmarking Results and Analysis</h4>
+        <p class="text-muted" style="text-align:left">
+          <b>Benchmarking results on the LU-AVS dataset. </b> For all the evaluation metrics, higher values indicate better performance.
+		  Notably, in AVL methods, the spatial localization results are presented by heatmaps. 
+		  For comparison, we convert heatmaps to bounding boxes as exsiting works.
+		  Additionally, AVE methods focus on temporal localization. 
+		  Here, m_tIoU represents the segmentation accuracy within the ground-truth temporal range, 
+		  and m_vIoU indicates the segmentation accuracy over the temporal union between the predicted and ground-truth durations.
+		  Besides, we replace the text branch in the STVG methods with an audio branch for spatial-temporal audible object grounding.
+        </p>
+
+        <div class="col-md centered" style="padding:0.6rem; text-align:center">
+        <img src="./images/exp_results.jpg" style="width: 90%;" class="img-responsive"/> 
+        </div>
+      </div>
+    </div>
+
+    <br/>
+
+    
+    <div class="row">
+      <div class="col-md-12">
+       <h5 class="subheading">Challenges Imposed by LU-AVS Dataset</h5>                    
+        <p class="text-muted">        
+		Based on the above experimental results, we summarize the dataset challenges and adaptability of existing methods as follows: </br></br>
+        (1) <b>For long videos in LU-AVS, the sounding duration and the start- and end-sounding time positions are uncertain. </b></br>
+		Therefore, both the spatial and temporal localization of audible objects are necessary for LU-AVS. 
+		Existing AVS methods developed based on the trimmed videos struggle to achieve temporal localization, showing limited adaptability in long videos. <br/> 
+        </p>
+ 
+		<p class="text-muted">        
+        (2) <b> Unlike trimmed videos always feature audible objects, untrimmed videos contain a high proportion of silent segments.  </b></</br>
+		Hence, the existing AVL methods trained on LU-AVS tend to overlook the audible objects.
+		This suggests the requirement for greater emphasis on audio in model development on LU-AVS.<br/>        
+        </p>
+		
+ 		<p class="text-muted">        
+        (3) <b>Similar to the STVG task, the exhaustive annotations in LU-AVS pose a high demand for achieving consistent spatial and temporal localization of audible objects, 
+		requiring methods to effectively joint model spatial, temporal, and audio-visual interactions.</b><br/>        
+        </p>
+		<br/>
+		</div>
+	</div>
+	</br></br>
+
+<section class="bg-light" id="downloads">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading text-uppercase">Download</h2>
+        <h3 class="section-subheading text-muted">Dataset publicly available for research purposes</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12"> 
+        
+        <h4 class="section-subheading" id="downloadFiles">Data download </h4><hr/>
+        
+        <p><b>Resources (Anonymous Now):</b>
+          <ul>
+            <li>All untrimmed videos: &nbsp;&nbsp; Download from&nbsp;
+              <a href="#">Google Drive</a>,&nbsp;</li>
+            <li>Mask Annotations: &nbsp;&nbsp; Download from&nbsp;
+               <a href="#">Google Drive</a>,&nbsp;</li>
+            <li>Bounding Box Annotations: &nbsp;&nbsp;, Download from&nbsp;
+			<a href="#">Google Drive</a>,&nbsp;</li>
+            </ul>
+        </p>
+
+        <p> <b>Annotations</b> (train, val and test set): Available for download at <a href="#">GitHub  (Anonymous Now):</a></p>
+		<p> The format of a JSON file is shown in below:</p>
+       <pre class="hidden-sm hidden-md hidden-lg">
+<em class="comment">Please view the JSON format in larger screen</em>
+</pre>
+
+<pre class="hidden-xs">
+{
+    "version": "VERSION 1.0",
+	{
+		"video_id": "0YMv3RUxGQM",                       <em class="comment", style="color:#ff6600"># Video ID in LU-AVS</em>
+		"video_path": "./0YMv3RUxGQM.mp4",               <em class="comment", style="color:#ff6600"># Relative path name in this dataset</em>
+		"frame_count": 635,
+		"fps": 29.71, 
+		"width": 406, 
+		"height": 720, 
+		"subject_objects": [                            <em class="comment", style="color:#ff6600"># The ID of the audible segment in this video</em>
+			"0": {
+				"category_name": "engine_knocking",     <em class="comment", style="color:#ff6600"># The category name of an audible segment</em>
+				"start_frame": 212,
+				"end_frame": 632,
+				"mask_dir": "./0YMv3RUxGQM__engine_knocking__ST212__ET632", <em class="comment", style="color:#ff6600"># The directory with annotated masks of the video</em>
+				"trajectory_bbox_path": "./0YMv3RUxGQM.json"       <em class="comment", style="color:#ff6600"># Relative annotation recording path of a video</em>
+			}, 
+			...
+		], 
+	}
+	...
+}
+</pre>
+
+<em class="comment">The annotated json file of audible segments in a video (0YMv3RUxGQM.json).</em>
+
+<pre class="hidden-xs">
+ 
+{
+	"0": {                                          <em class="comment", style="color:#ff6600"># The ID of the audible segment in this video</em>       
+		"212"{                                  <em class="comment", style="color:#ff6600"># The frame ID of the audible segment</em>
+			"bbox": [
+				161,                            <em class="comment", style="color:#ff6600"># Left</em>
+				34,	                        <em class="comment", style="color:#ff6600"># Top</em>
+				1028,                           <em class="comment", style="color:#ff6600"># Right</em>
+				685                             <em class="comment", style="color:#ff6600"># Bottom</em>
+			]
+			category_name: "engine_knocking",    <em class="comment", style="color:#ff6600"># The trajectory ID to which the bounding box belongs</em>
+			mask_path: "0/000212.png,           <em class="comment", style="color:#ff6600"># The specific mask path of the frame</em>
+			generated: 0,                       <em class="comment", style="color:#ff6600"># 1 - the bounding box is automatically generated by a tracker</em>
+						           <em class="comment", style="color:#ff6600"># 0 - the bounding box is manually labeled</em>
+		}, 
+		...
+	},
+	...
+}
+</pre>
+        
+        <br/>
+        <h4 class="section-subheading">Publication(s)</h4>
+        <p>
+          If you find our work useful in your research, please cite our paper.
+        </p>
+        <pre class="bibtex" style="text-align:left; margin-left:2px">
+        <code>
+        @ARTICLE{
+          title={Benchmarking Audio Visual Segmentation for Long-Untrimmed Videos},
+          author={anonymous},
+          year={2024},
+        }</code>
+        </pre>
+
+
+        <br/>
+        <h4 class="section-subheading">Disclaimer </h4>
+        <p> The released LU-AVS dataset is curated, which perhaps owns potential correlation between instrument and geographical area. This issue warrants further research and consideration.
+        </p>
+
+      </div>
+    </div>
+
+
+    <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="section-subheading">Copyright <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png"/></h4>
+        <p>
+          All datasets and benchmarks on this page are copyright by us and published under the <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a> License. This means that  you must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. You may not use the material for commercial purposes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+</section>
+
+
+
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org/",
+  "@type":"Dataset",
+  "name":"LU-AVS dataset",
+  "description":"First-person (egocentric) video dataset; multi-faceted non-scripted recordings in the wearers' homes, capturing all daily activities in the kitchen over multiple days. Annotations are collected using a novel live audio commentary approach.",
+  "url":"https://github.com/epic-kitchens/annotations",
+  "sameAs":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d",
+  "citation":"Damen, Dima et al. 'Scaling Egocentric Vision: The EPIC-KITCHENS Dataset', European Conference on Computer Vision, 2018",
+  "identifier": "10.5523/bris.3h91syskeag572hl6tvuovwv4d",
+  "keywords":[
+     "Egocentric vision",
+     "Human actions",
+     "Object interactions",
+     "actions",
+     "video",
+     "kitchens",
+     "cooking",
+     "dataset",
+     "epic kitchens",
+     "epic",
+     "eccv",
+     "2022"
+  ],
+  "creator":{
+     "@type":"Organization",
+     "url": "https://epic-kitchens.github.io/",
+     "name":"EPIC Team",
+     "contactPoint":{
+        "@type":"ContactPoint",
+        "contactType": "technical support",
+        "email":"uob-epic-kitchens@bristol.ac.uk",
+        "url":"https://github.com/epic-kitchens/annotations/issues"
+     }
+  },
+  "distribution":[
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"video/mp4",
+        "contentUrl":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"image/jpeg",
+        "contentUrl":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"text/csv",
+        "contentUrl":"https://github.com/epic-kitchens/annotations"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"application/octet-stream",
+        "contentUrl":"https://github.com/epic-kitchens/annotations"
+     }
+  ],
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/"
+}
+</script>
+
+    
+    <!-- Footer -->
+    <footer style="background-color:#373435ff;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"/>
+            <span class="copyright" style="color:#eee;">Copyright &copy;  (Anonymous Now):</span>
+          </div>
+          <div class="col-md-8">
+            <p style="color:#eee;">For any questions, email us at
+              <a href="mailto:#"> anonymous</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="./jquery//bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./jquery/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="./jquery/agency.min.js"></script>
+
+  </body>
 </html>
