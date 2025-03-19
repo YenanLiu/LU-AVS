@@ -160,8 +160,7 @@
         <h4 class="service-heading">Basic informations</h4>
         <ul class="text-muted">
           <li class="text-muted">Videos are collected from YouTube.</li>
-          <li class="text-muted"><b>7.2K videos</b> spanning <b>88 categories</b>.</li>
-          <li class="text-muted"><b>6.2K annotated masks</b> and <b>7.3K bounding boxes</b></li>
+          <li class="text-muted"><b>1.7K videos</b> spanning <b>88 categories</b>.</li>
           <li class="text-muted">Spanning a <b>wide range of domains</b>, including Animal, Human, Music, Sport, Tool, Vehicle, and others</li>
         </ul>
       </div>
@@ -169,7 +168,6 @@
       <div class="col-md-4">
         <h4 class="service-heading">Characteristics</h4>
         <ul class="text-muted">
-          <li class="text-muted">Total duration of videos is <b>84.6 hours </b>, sounding duration is 73.3 hours.</li>
           <li class="text-muted">Long average duration <b>41.97s</b>.</li>
           <li class="text-muted">Long average sounding duration <b>16.03s</b>.</li>
           <li class="text-muted">Over half of the videos have multiple audible segments.</li>
@@ -181,8 +179,7 @@
       <div class="col-md-4">
         <h4 class="service-heading">Personal data/Human subjects</h4>
           <p class="text-muted">Videos in LU-AVS are public on YouTube and annotated via professional annotators. 
-		  The details of the annotation way are explained in our paper. 
-		  Our dataset does not contain personally identifiable information or offensive content.</p>
+		  The details of the annotation way are explained in our paper.</p>
       </div>
       </div>
 
@@ -385,7 +382,7 @@
       <div class="col-md-12">
         <p class="text-muted" style="text-align:left">
         <p class="text-muted" style="text-align:left">
-          <b>More details are in the <a href="#">[Paper]</a> and <a href="#">[Supplementary]</a></b>.<br/>  
+          <b>More details are in the <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Benchmarking_Audio_Visual_Segmentation_for_Long-Untrimmed_Videos_CVPR_2024_paper.pdf">[Paper]</a> and <a href="https://openaccess.thecvf.com/content/CVPR2024/supplemental/Liu_Benchmarking_Audio_Visual_CVPR_2024_supplemental.pdf">[Supplementary]</a></b>.<br/>  
         </p> 
       </div>
     </div>
@@ -428,7 +425,7 @@
 			To explore the performance of STVG methods on LU-AVS, we modify these text-guided methods to adapt to our task.
 		</div>
 		
-		<div class="col-md-12">
+		<!--<div class="col-md-12">
 			<h6 class="subheading">A Strong LU-AVS Baseline:</h6>
 			<div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
 			<img src="./images/pipeline.png" style="width:70%;" class="img-responsive"/> 
@@ -444,11 +441,11 @@
 			in the dataset. To achieve the spatial and temporal localization of audible objects, 
 			we introduce a simple framework to provide a base reference for long video audible object grounding in the future.
 			</p>
-</div>
+		</div>-->
     </div>
 
     <br/>
-    <div class="row">
+    <!--<div class="row">
       <div class="col-md-12">
         <h4 class="subheading">Benchmarking Results and Analysis</h4>
         <p class="text-muted" style="text-align:left">
@@ -467,7 +464,7 @@
       </div>
     </div>
 
-    <br/>
+    <br/>-->
 
     
     <div class="row">
@@ -511,70 +508,55 @@
         
         <h4 class="section-subheading" id="downloadFiles">Data download </h4><hr/>
         
-        <p><b>Resources (Anonymous Now):</b>
-          <ul>
-            <li>All untrimmed videos: &nbsp;&nbsp; Download from&nbsp;
-              <a href="#">Google Drive</a>,&nbsp;</li>
-            <li>Mask Annotations: &nbsp;&nbsp; Download from&nbsp;
-               <a href="#">Google Drive</a>,&nbsp;</li>
-            <li>Bounding Box Annotations: &nbsp;&nbsp;, Download from&nbsp;
-			<a href="#">Google Drive</a>,&nbsp;</li>
-            </ul>
+        <p><b>Resources:</b> All videos and Annotations (mask and Bbox): &nbsp;&nbsp; Download from&nbsp; <a href="https://pan.baidu.com/s/139-vM-48sjPhLn1d6ZIu3Q?pwd=rx8p">Baidu Pan (Extraction Code: rx8p)</a>,&nbsp;</li>
         </p>
 
-        <p> <b>Annotations</b> (train, val and test set): Available for download at <a href="#">GitHub  (Anonymous Now):</a></p>
+        <p> <b>Annotations</b> (train, val and test set): Available for download at  <a href="https://pan.baidu.com/s/139-vM-48sjPhLn1d6ZIu3Q?pwd=rx8p">Baidu Pan (Extraction Code: rx8p)</a></p>
+		<p> The mask_bbox_jsons folder contains JSON files with both mask and bbox annotations. 
+			The bbox_jsons folder contains JSON files with only bbox annotations. </p></hr>
 		<p> The format of a JSON file is shown in below:</p>
        <pre class="hidden-sm hidden-md hidden-lg">
 <em class="comment">Please view the JSON format in larger screen</em>
 </pre>
 
-<pre class="hidden-xs">
+<pre class="hidden-xs">  <!--<em class="comment", style="color:#ff6600"># Relative path name in this dataset</em> <em class="comment", style="color:#ff6600"># Relative path name in this dataset</em>-->
 {
-    "version": "VERSION 1.0",
+	
+	"0K4QM63pY-w",   <em class="comment", style="color:#ff6600"># Video Name in LU-AVS</em>
 	{
-		"video_id": "0YMv3RUxGQM",                       <em class="comment", style="color:#ff6600"># Video ID in LU-AVS</em>
-		"video_path": "./0YMv3RUxGQM.mp4",               <em class="comment", style="color:#ff6600"># Relative path name in this dataset</em>
-		"frame_count": 635,
-		"fps": 29.71, 
-		"width": 406, 
-		"height": 720, 
-		"subject_objects": [                            <em class="comment", style="color:#ff6600"># The ID of the audible segment in this video</em>
-			"0": {
-				"category_name": "engine_knocking",     <em class="comment", style="color:#ff6600"># The category name of an audible segment</em>
-				"start_frame": 212,
-				"end_frame": 632,
-				"mask_dir": "./0YMv3RUxGQM__engine_knocking__ST212__ET632", <em class="comment", style="color:#ff6600"># The directory with annotated masks of the video</em>
-				"trajectory_bbox_path": "./0YMv3RUxGQM.json"       <em class="comment", style="color:#ff6600"># Relative annotation recording path of a video</em>
-			}, 
-			...
-		], 
+		"duration": 59.96, <em class="comment", style="color:#ff6600"># The duration of the video.</em>
+		"annotations": [
+			{
+				"segment":[ 	<em class="comment", style="color:#ff6600"># The first audible segment. </em>
+					23, 		<em class="comment", style="color:#ff6600"># The start frame index of the audible segment.</em>
+					1328 		<em class="comment", style="color:#ff6600"># The end frame index of the audible segment.</em>
+				],
+				"label": "fire truck siren", 	<em class="comment", style="color:#ff6600"># Category. </em>
+				"label_id": 46, 	 	<em class="comment", style="color:#ff6600"># Category ID. </em>
+			},
+			{
+				"segment":[ 	<em class="comment", style="color:#ff6600"># The second audible segment. </em>
+					1330,
+					1580
+				],
+				"label": "car passing by", 
+				"label_id": 5,	
+			}
+		]
+		"fps": 29.71,  
+		"subset": "test",
 	}
+
 	...
 }
 </pre>
+<p><b>Instructions for Use:</b> 
+The annotation directory for each video segment follows the format: main_dir/{video Name}__{label}__st__{start frame index}__et__{end frame index}</br>
+Note: Spaces in the label are replaced with _.</br>
+For masks.npy or bbox.npy, the first annotation corresponds to the segment's starting frame.
+For example, if an audible segment starts at frame 23, the first mask in masks.npy is the annotation for frame 23.
+</p>
 
-<em class="comment">The annotated json file of audible segments in a video (0YMv3RUxGQM.json).</em>
-
-<pre class="hidden-xs">
- 
-{
-	"0": {                                          <em class="comment", style="color:#ff6600"># The ID of the audible segment in this video</em>       
-		"212"{                                  <em class="comment", style="color:#ff6600"># The frame ID of the audible segment</em>
-			"bbox": [
-				161,                            <em class="comment", style="color:#ff6600"># Left</em>
-				34,	                        <em class="comment", style="color:#ff6600"># Top</em>
-				1028,                           <em class="comment", style="color:#ff6600"># Right</em>
-				685                             <em class="comment", style="color:#ff6600"># Bottom</em>
-			]
-			category_name: "engine_knocking",    <em class="comment", style="color:#ff6600"># The trajectory ID to which the bounding box belongs</em>
-			mask_path: "0/000212.png,           <em class="comment", style="color:#ff6600"># The specific mask path of the frame</em>
-			generated: 0,                       <em class="comment", style="color:#ff6600"># 1 - the bounding box is automatically generated by a tracker</em>
-						           <em class="comment", style="color:#ff6600"># 0 - the bounding box is manually labeled</em>
-		}, 
-		...
-	},
-	...
-}
 </pre>
         
         <br/>
@@ -584,11 +566,13 @@
         </p>
         <pre class="bibtex" style="text-align:left; margin-left:2px">
         <code>
-        @ARTICLE{
-          title={Benchmarking Audio Visual Segmentation for Long-Untrimmed Videos},
-          author={anonymous},
-          year={2024},
-        }</code>
+        @inproceedings{liu2024benchmarking,
+		title={Benchmarking audio visual segmentation for long-untrimmed videos},
+		author={Liu Chen, Peike Li, Qingtao Yu, Hongwei Sheng,  Dadong Wang, Lincheng Li, and Xin Yu},
+		booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+		pages={22712--22722},
+		year={2024}
+	}</code>
         </pre>
 
 
@@ -596,7 +580,11 @@
         <h4 class="section-subheading">Disclaimer </h4>
         <p> The released LU-AVS dataset is curated, which perhaps owns potential correlation between instrument and geographical area. This issue warrants further research and consideration.
         </p>
-
+        <br/>
+        <h4 class="section-subheading", style="color:#ff6600">Important Notice </h4>
+        <p> Considering the copyright issues of some videos, we have not included controversial data (10%). If there are still any controversial aspects regarding our videos, 
+		please contact us as soon as possible, and we will withdraw the controversial part.
+        </p>
       </div>
     </div>
 
